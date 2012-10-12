@@ -1,0 +1,23 @@
+Edit quiz settings report
+This report allows users with 'quiz/editquizsettings:editquizsettingsreport'
+capability to edit open and close dates of a quiz at any stage. Therefore,
+users are advised to be absolutely sure about the modification of open and/or
+close dates of a quiz before modifying the above dates.
+
+Editing open and/or close date of a quiz
+On a Moodle course website, click on a given quiz, on navigation block, under
+{quiz_name}->Results->Edit quiz settings, where [quiz_name] is the name of the
+current quiz. You will see a form with the title "Edit quiz settings" which
+displays some information about the current quiz such as name and ID number
+of the current quiz. Under Timing title it displays two date-and-time selector
+fields ('Open the quiz' and 'close the quiz') with the current setting of the
+quiz and the corresponding checkbox ('Enable'). Modify date and time as
+required and press the 'Save changes' button to edit the current quiz.
+There is also a 'Cancel' button is case you decide to cancel the operation.
+Bothe buttons redirect the users to the quiz initial page.
+
+Log information
+The modification process is logged and therefore can be backtracked. However,
+this information can normally be accessed by developers who have access to 
+database tables and can see what has been changed in which quiz and which
+course.
