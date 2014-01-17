@@ -26,7 +26,13 @@
 defined('MOODLE_INTERNAL') || die();
 
 
+$plugin->version   = 2014011700;
+$plugin->requires  = 2012112900;
+$plugin->cron      = 0;
 $plugin->component = 'quiz_editquizsettings';
-$plugin->version   = 2012101200;
-$plugin->requires  = 2011070102;
 $plugin->maturity  = MATURITY_STABLE;
+$plugin->release   = 'v1.1 for Moodle 2.4+';
+
+$plugin->dependencies = array(
+    'mod_quiz' => 2012112900,
+);
