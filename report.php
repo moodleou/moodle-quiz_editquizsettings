@@ -44,7 +44,7 @@ class quiz_editquizsettings_report extends quiz_default_report {
      */
     public function display($quiz, $cm, $course) {
         global $CFG, $DB;
-        $modcontext = get_context_instance(CONTEXT_MODULE, $cm->id);
+        $modcontext = context_module::instance($cm->id);
 
         // If the user has 'quiz/editquizsettings:editquizsettingsreport' allow dates to be modified.
         require_capability('quiz/editquizsettings:editquizsettingsreport', $modcontext);
