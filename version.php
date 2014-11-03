@@ -26,7 +26,7 @@
 defined('MOODLE_INTERNAL') || die();
 
 
-$plugin->version   = 2014011700;
+$plugin->version   = 2014082800;
 $plugin->requires  = 2012112900;
 $plugin->cron      = 0;
 $plugin->component = 'quiz_editquizsettings';

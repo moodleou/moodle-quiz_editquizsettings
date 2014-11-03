@@ -56,7 +56,7 @@ class quiz_editquizsettings_report extends quiz_default_report {
         $reporturl = new moodle_url('/mod/quiz/report.php', $pageoptions);
 
         $mform = new quiz_report_editquizsettings_form($reporturl,
-                array('quizname'=> $quiz->name, 'idnumber'=> $cm->idnumber), 'get');
+                array('quizname' => $quiz->name, 'idnumber' => $cm->idnumber), 'get');
 
         $data = new stdClass();
         foreach ($this->editablefields as $field) {
@@ -65,7 +65,7 @@ class quiz_editquizsettings_report extends quiz_default_report {
         $mform->set_data($data);
 
         if ($mform->is_cancelled()) {
-            redirect(new moodle_url('/mod/quiz/view.php', array('id' =>$cm->id)));
+            redirect(new moodle_url('/mod/quiz/view.php', array('id' => $cm->id)));
 
         } else if ($fromform = $mform->get_data()) {
             $loginfo = '';
@@ -88,7 +88,12 @@ class quiz_editquizsettings_report extends quiz_default_report {
             if ($loginfo) {
                 $DB->update_record('quiz', $modifiedquiz);
                 $info = "updated quiz table: $loginfo";
-                add_to_log($quiz->course, 'quiz', 'report_editquizsettings', $reporturl, $info, $cm->id);
+
+                // Log quiz settings edit event.
+                $event = \quiz_editquizsettings\event\quiz_settings_edited::create(
+                     array('objectid' => $quiz->id, 'context' => context_module::instance($cm->id)));
+                $event->set_loginfo($info);
+                $event->trigger();
 
                 // Update the calendar relating to this quiz.
                 quiz_update_events($quiz);
@@ -100,7 +105,7 @@ class quiz_editquizsettings_report extends quiz_default_report {
                 // mod_updated event for this change, because none of the code
                 // that catches that event seems to care about dates.
             }
-            redirect(new moodle_url('/mod/quiz/view.php', array('id' =>$cm->id)));
+            redirect(new moodle_url('/mod/quiz/view.php', array('id' => $cm->id)));
         }
         $this->print_header_and_tabs($cm, $course, $quiz, 'editquizsettings');
         $mform->display();
