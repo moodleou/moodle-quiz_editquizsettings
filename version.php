@@ -22,17 +22,15 @@
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
-
 defined('MOODLE_INTERNAL') || die();
 
-
-$plugin->version   = 2014082800;
-$plugin->requires  = 2012112900;
+$plugin->version   = 2014111200;
+$plugin->requires  = 2013101800;
 $plugin->cron      = 0;
 $plugin->component = 'quiz_editquizsettings';
 $plugin->maturity  = MATURITY_STABLE;
-$plugin->release   = 'v1.1 for Moodle 2.4+';
+$plugin->release   = 'v1.2 for Moodle 2.6+';
 
 $plugin->dependencies = array(
-    'mod_quiz' => 2012112900,
+    'mod_quiz' => 2013110500,
 );
