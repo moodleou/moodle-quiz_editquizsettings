@@ -16,6 +16,7 @@ Feature: Edit quiz settings, in order to edit the settings (dates) we need to
       | manager1 | C1     | manager        |
       | manager2 | C1     | manager        |
     When I log in as "admin"
+    And I am on site homepage
     And I follow "Course 1"
     And I turn editing mode on
     And I add a "Quiz" to section "1" and I fill the form with:
@@ -54,6 +55,7 @@ Feature: Edit quiz settings, in order to edit the settings (dates) we need to
     And I log out
 
     When I log in as "admin"
+    And I am on site homepage
     And I follow "Course 1"
     And I follow "Quiz 1"
     Given I navigate to "Edit settings" node in "Quiz administration"
@@ -81,6 +83,7 @@ Feature: Edit quiz settings, in order to edit the settings (dates) we need to
     And I log out
 
     When I log in as "admin"
+    And I am on site homepage
     And I follow "Course 1"
     And I follow "Quiz 1"
     Given I navigate to "Edit settings" node in "Quiz administration"
