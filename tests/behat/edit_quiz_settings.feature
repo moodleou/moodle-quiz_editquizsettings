@@ -1,4 +1,4 @@
-@ou @ouvle @mod @mod_quiz @quiz @quiz_editquizsettings
+@ou @ou_vle @mod @mod_quiz @quiz @quiz_editquizsettings
 Feature: Edit quiz settings, in order to edit the settings (dates) we need to
         create a quiz, then using the esitquizsettings report to edit the settings
         such as opening or closing dates.
