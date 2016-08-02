@@ -29,6 +29,7 @@ class quiz_report_editquizsettings_form extends moodleform {
     protected function definition() {
         global $CFG;
         $mform = $this->_form;
+        $this->_form->updateAttributes(array('id' => 'quiz_editquizsettings_form'));
 
         $mform->addElement('header', 'heading', get_string('editquizsettings', 'quiz_editquizsettings'));
 
