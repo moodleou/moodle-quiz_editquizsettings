@@ -35,8 +35,7 @@ Feature: Edit quiz settings, in order to edit the settings (dates) we need to
     And I log out
 
   @javascript
-  Scenario: Manager goes to Quiz administration => Results => Edit quiz settings
-  and edits the dates, then admin user checks the Timing section in quiz form.
+  Scenario: Manager goes to Quiz administration => Results => Edit quiz settings and edits the open and close dates, then admin user checks the Timing section in quiz form.
     When I log in as "manager"
     And I follow "Course 1"
     And I follow "Quiz 1"
@@ -64,8 +63,7 @@ Feature: Edit quiz settings, in order to edit the settings (dates) we need to
     And the field "id_timeclose_month" matches value "November"
 
   @javascript
-  Scenario: Manager goes to Quiz administration => Results => Edit quiz settings
-  and edits the dates, then admin user checks the Timing section in quiz form.
+  Scenario: Manager goes to Quiz administration => Results => Edit quiz settings and edits the dates, then admin user checks the Timing section in quiz form.
     When I log in as "manager"
     And I follow "Course 1"
     And I follow "Quiz 1"
