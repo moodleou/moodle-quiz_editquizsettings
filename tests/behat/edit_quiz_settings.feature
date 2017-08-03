@@ -15,7 +15,7 @@ Feature: Edit quiz settings, in order to edit the settings (dates) we need to
       | manager | C1     | manager        |
     When I log in as "admin"
     And I am on site homepage
-    And I follow "Course 1"
+    And I am on "Course 1" course homepage
     And I turn editing mode on
     And I add a "Quiz" to section "1" and I fill the form with:
       | Name                 | Quiz 1             |
@@ -37,7 +37,7 @@ Feature: Edit quiz settings, in order to edit the settings (dates) we need to
   @javascript
   Scenario: Manager goes to Quiz administration => Results => Edit quiz settings and edits the open and close dates, then admin user checks the Timing section in quiz form.
     When I log in as "manager"
-    And I follow "Course 1"
+    And I am on "Course 1" course homepage
     And I follow "Quiz 1"
     Given I navigate to "Edit quiz settings" node in "Quiz administration > Results"
     Then I should see "Edit quiz settings"
@@ -50,7 +50,7 @@ Feature: Edit quiz settings, in order to edit the settings (dates) we need to
 
     When I log in as "admin"
     And I am on site homepage
-    And I follow "Course 1"
+    And I am on "Course 1" course homepage
     And I follow "Quiz 1"
     Given I navigate to "Edit settings" node in "Quiz administration"
     Then I should see "Edit settings"
@@ -65,7 +65,7 @@ Feature: Edit quiz settings, in order to edit the settings (dates) we need to
   @javascript
   Scenario: Manager goes to Quiz administration => Results => Edit quiz settings and edits the dates, then admin user checks the Timing section in quiz form.
     When I log in as "manager"
-    And I follow "Course 1"
+    And I am on "Course 1" course homepage
     And I follow "Quiz 1"
     Given I navigate to "Edit quiz settings" node in "Quiz administration > Results"
     Then I should see "Edit quiz settings"
@@ -76,7 +76,7 @@ Feature: Edit quiz settings, in order to edit the settings (dates) we need to
 
     When I log in as "admin"
     And I am on site homepage
-    And I follow "Course 1"
+    And I am on "Course 1" course homepage
     And I follow "Quiz 1"
     Given I navigate to "Edit settings" node in "Quiz administration"
     Then I should see "Edit settings"
