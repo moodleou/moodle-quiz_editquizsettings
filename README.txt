@@ -1,11 +1,13 @@
 The Edit quiz settings quiz report
+http://moodle.org/plugins/quiz_editquizsettings
 
 This 'report' is actually a tool which lets users edit certain settings, currenty
 the open and close dates, for a quiz, without needing to give them permission to
 edit all the other quiz settings.
 
-You can install it from the Moodle plugins database
-http://moodle.org/plugins/view.php?plugin=quiz_editquizsettings
+This is version 1.3 of the plugin, which is compatible with Moodle 3.2 and later.
+
+You can install it from the Moodle plugins database using the link above.
 
 Alternatively, you can install it using git. In the top-level folder of your
 Moodle install, type the command:
