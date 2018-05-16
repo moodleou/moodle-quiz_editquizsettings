@@ -31,3 +31,4 @@ $string['idnumber'] = 'ID number:';
 $string['pluginname'] = 'Edit quiz settings';
 $string['quizsettings_edited'] = 'edit quiz settings';
 $string['savechanges'] = 'Save changes';
+$string['privacy:metadata'] = 'The Edit quiz settings plugin does not store any personal data.';
