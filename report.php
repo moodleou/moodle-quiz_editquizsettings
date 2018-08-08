@@ -15,8 +15,7 @@
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
 /**
- * This script allows users with 'quiz/editquizsettings:editquizsettingsreport' capability
- * to modify the quiz settinmgs.
+ * This tool allows selected users to edit selected quiz settings.
  *
  * @package   quiz_editquizsettings
  * @copyright 2012 The Open University
@@ -29,18 +28,31 @@ defined('MOODLE_INTERNAL') || die();
 require_once($CFG->dirroot . '/mod/quiz/report/default.php');
 
 /**
+ * This tool allows selected users to edit selected quiz settings.
+ *
+ * The 'selected users' are those with 'quiz/editquizsettings:editquizsettingsreport'.
+ * Then can then edit the settings this report lets them edit, without
+ * needing full permissions to edit this quiz.
+ *
  * This class extends quiz_default_report class and the display() method
  * runs by /mod/quiz/report.php script. All other methods are private and
  * are not used outside this class.
+ *
+ * @copyright 2012 The Open University
+ * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class quiz_editquizsettings_report extends quiz_default_report {
+    /**
+     * @var array fields that can be edited using this report.
+     */
     private $editablefields = array('timeopen', 'timeclose');
 
     /**
      * Displays the results for this report
-     * param pbject $quiz, the current quiz object
-     * param pbject $cm, the current course module object
-     * param pbject $course, the current course object
+     *
+     * @param object $quiz, the current quiz object
+     * @param object $cm, the current course module object
+     * @param object $course, the current course object
      */
     public function display($quiz, $cm, $course) {
         global $CFG, $DB;
