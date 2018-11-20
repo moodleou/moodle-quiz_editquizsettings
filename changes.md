@@ -1,6 +1,11 @@
 # Change log for the Edit quiz settings quiz report
 
 
+## Changes in 1.5
+
+* Fix Behat for Moodle 3.6.
+
+
 ## Changes in 1.4
 
 * Privacy API implementation.
