@@ -38,7 +38,7 @@ Feature: Edit quiz settings, in order to edit the settings (dates) we need to
     When I log in as "manager"
     And I am on "Course 1" course homepage
     And I follow "Quiz 1"
-    Given I navigate to "Edit quiz settings" node in "Quiz administration > Results"
+    And I navigate to "Results > Edit quiz settings" in current page administration
     Then I should see "Edit quiz settings"
     And I set the field "id_timeopen_day" to "30"
     And I set the field "id_timeopen_month" to "April"
@@ -50,7 +50,7 @@ Feature: Edit quiz settings, in order to edit the settings (dates) we need to
     When I log in as "admin"
     And I am on "Course 1" course homepage
     And I follow "Quiz 1"
-    Given I navigate to "Edit settings" node in "Quiz administration"
+    And I navigate to "Edit settings" in current page administration
     Then I should see "Edit settings"
     And I follow "Edit settings"
     And I should see "Timing"
@@ -65,7 +65,7 @@ Feature: Edit quiz settings, in order to edit the settings (dates) we need to
     When I log in as "manager"
     And I am on "Course 1" course homepage
     And I follow "Quiz 1"
-    Given I navigate to "Edit quiz settings" node in "Quiz administration > Results"
+    And I navigate to "Results > Edit quiz settings" in current page administration
     Then I should see "Edit quiz settings"
     And I set the field "id_timeopen_day" to "1"
     And I set the field "id_timeopen_month" to "May"
@@ -75,7 +75,7 @@ Feature: Edit quiz settings, in order to edit the settings (dates) we need to
     When I log in as "admin"
     And I am on "Course 1" course homepage
     And I follow "Quiz 1"
-    Given I navigate to "Edit settings" node in "Quiz administration"
+    And I navigate to "Edit settings" in current page administration
     Then I should see "Edit settings"
     And I follow "Edit settings"
     And I should see "Timing"
