@@ -23,7 +23,6 @@
  */
 
  namespace quiz_editquizsettings\event;
- defined('MOODLE_INTERNAL') || die();
 
  /**
   * Event generated when quissettings are edited via quiz_editquizsettings plugin.
