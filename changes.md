@@ -1,5 +1,8 @@
 # Change log for the Edit quiz settings quiz report
 
+## Changes in 1.6
+
+* This version works with Moodle 4.0.
 
 ## Changes in 1.5
 

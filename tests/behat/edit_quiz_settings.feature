@@ -35,10 +35,7 @@ Feature: Edit quiz settings, in order to edit the settings (dates) we need to
 
   @javascript
   Scenario: Manager goes to Quiz administration => Results => Edit quiz settings and edits the open and close dates, then admin user checks the Timing section in quiz form.
-    When I log in as "manager"
-    And I am on "Course 1" course homepage
-    And I follow "Quiz 1"
-    And I navigate to "Results > Edit quiz settings" in current page administration
+    When I am on the "Quiz 1" "quiz_editquizsettings > Report" page logged in as "manager"
     Then I should see "Edit quiz settings"
     And I set the field "id_timeopen_day" to "30"
     And I set the field "id_timeopen_month" to "April"
@@ -47,38 +44,25 @@ Feature: Edit quiz settings, in order to edit the settings (dates) we need to
     And I press "Save changes"
     And I log out
 
-    When I log in as "admin"
-    And I am on "Course 1" course homepage
-    And I follow "Quiz 1"
-    And I navigate to "Edit settings" in current page administration
-    Then I should see "Edit settings"
-    And I follow "Edit settings"
+    And I am on the "Quiz 1" "quiz activity editing" page logged in as "admin"
     And I should see "Timing"
     And I follow "Timing"
-    Then the field "id_timeopen_day" matches value "30"
+    And the field "id_timeopen_day" matches value "30"
     And the field "id_timeopen_month" matches value "April"
     And the field "id_timeclose_day" matches value "30"
     And the field "id_timeclose_month" matches value "November"
 
   @javascript
   Scenario: Manager goes to Quiz administration => Results => Edit quiz settings and edits the dates, then admin user checks the Timing section in quiz form.
-    When I log in as "manager"
-    And I am on "Course 1" course homepage
-    And I follow "Quiz 1"
-    And I navigate to "Results > Edit quiz settings" in current page administration
+    When I am on the "Quiz 1" "quiz_editquizsettings > Report" page logged in as "manager"
     Then I should see "Edit quiz settings"
     And I set the field "id_timeopen_day" to "1"
     And I set the field "id_timeopen_month" to "May"
     And I press "Save changes"
     And I log out
 
-    When I log in as "admin"
-    And I am on "Course 1" course homepage
-    And I follow "Quiz 1"
-    And I navigate to "Edit settings" in current page administration
-    Then I should see "Edit settings"
-    And I follow "Edit settings"
+    And I am on the "Quiz 1" "quiz activity editing" page logged in as "admin"
     And I should see "Timing"
     And I follow "Timing"
-    Then the field "id_timeopen_day" matches value "1"
+    And the field "id_timeopen_day" matches value "1"
     And the field "id_timeopen_month" matches value "May"
