@@ -54,12 +54,4 @@ class quiz_settings_edited extends \core\event\base {
     public function set_loginfo($loginfo) {
         $this->loginfo = $loginfo;
     }
-
-    public function get_legacy_logdata() {
-        $logaction = 'edit settings';
-        $loginfo = $this->loginfo;
-        $pluginname = 'quiz_editquizsettings';
-        $url = '..//mod/quiz/report.php?id=' . $this->objectid . '&mode=editquizsettings';
-        return array($this->courseid, $pluginname, $logaction, $url, $loginfo, $this->objectid, $this->contextinstanceid);
-    }
 }
