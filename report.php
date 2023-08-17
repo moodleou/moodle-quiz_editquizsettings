@@ -22,10 +22,7 @@
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
-
-defined('MOODLE_INTERNAL') || die();
-
-require_once($CFG->dirroot . '/mod/quiz/report/default.php');
+use mod_quiz\local\reports\report_base;
 
 /**
  * This tool allows selected users to edit selected quiz settings.
@@ -41,7 +38,7 @@ require_once($CFG->dirroot . '/mod/quiz/report/default.php');
  * @copyright 2012 The Open University
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
-class quiz_editquizsettings_report extends quiz_default_report {
+class quiz_editquizsettings_report extends report_base {
     /**
      * @var array fields that can be edited using this report.
      */
