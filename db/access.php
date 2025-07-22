@@ -25,10 +25,10 @@
 defined('MOODLE_INTERNAL') || die();
 
 
-$capabilities = array(
-    'quiz/editquizsettings:editquizsettingsreport' => array(
+$capabilities = [
+    'quiz/editquizsettings:editquizsettingsreport' => [
         'captype' => 'write',
         'contextlevel' => CONTEXT_MODULE,
-        'archetypes' => array('manager' => CAP_ALLOW),
-    )
-);
+        'archetypes' => ['manager' => CAP_ALLOW],
+    ],
+];

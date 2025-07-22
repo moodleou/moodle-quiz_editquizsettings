@@ -26,9 +26,9 @@
 $string['editquizsettings'] = 'Edit quiz settings';
 $string['editquizsettings:componentname'] = 'Edit quiz settings report';
 $string['editquizsettings:editquizsettingsreport'] = 'Use the edit quiz settings report';
-$string['name'] = 'Name:';
 $string['idnumber'] = 'ID number:';
+$string['name'] = 'Name:';
 $string['pluginname'] = 'Edit quiz settings';
+$string['privacy:metadata'] = 'The Edit quiz settings plugin does not store any personal data.';
 $string['quizsettings_edited'] = 'edit quiz settings';
 $string['savechanges'] = 'Save changes';
-$string['privacy:metadata'] = 'The Edit quiz settings plugin does not store any personal data.';

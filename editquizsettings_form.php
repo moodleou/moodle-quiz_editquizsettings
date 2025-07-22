@@ -35,10 +35,13 @@ require_once($CFG->dirroot . '/lib/formslib.php');
  */
 class quiz_report_editquizsettings_form extends moodleform {
 
+    /**
+     * Define the form.
+     */
     protected function definition() {
         global $CFG;
         $mform = $this->_form;
-        $this->_form->updateAttributes(array('id' => 'quiz_editquizsettings_form'));
+        $this->_form->updateAttributes(['id' => 'quiz_editquizsettings_form']);
 
         $mform->addElement('header', 'heading', get_string('editquizsettings', 'quiz_editquizsettings'));
 
@@ -53,15 +56,16 @@ class quiz_report_editquizsettings_form extends moodleform {
 
         // Open and close dates.
         $mform->addElement('date_time_selector', 'timeopen', get_string('quizopen', 'quiz'),
-                array('optional' => true, 'step' => 1));
+            ['optional' => true, 'step' => 1]);
         $mform->addHelpButton('timeopen', 'quizopenclose', 'quiz');
 
         $mform->addElement('date_time_selector', 'timeclose', get_string('quizclose', 'quiz'),
-                array('optional' => true, 'step' => 1));
+            ['optional' => true, 'step' => 1]);
 
         $this->add_action_buttons(true, get_string('savechanges', 'quiz_editquizsettings'), false);
     }
 
+    #[\Override]
     public function validation($data, $files) {
         $errors = parent::validation($data, $files);
 

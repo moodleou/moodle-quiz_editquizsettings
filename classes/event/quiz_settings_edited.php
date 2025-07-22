@@ -32,25 +32,39 @@
   * @license http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
   */
 class quiz_settings_edited extends \core\event\base {
+
+    /**
+     * The log information.
+     * @var string
+     */
     private $loginfo = '';
 
+    #[\Override]
     protected function init() {
         $this->data['crud'] = 'u';
         $this->data['edulevel'] = self::LEVEL_TEACHING;
         $this->data['objecttable'] = 'quiz';
     }
 
+    #[\Override]
     public static function get_name() {
         return get_string('quizsettings_edited', 'quiz_editquizsettings');
     }
 
+    #[\Override]
     public function get_description() {
         return "User {$this->userid} has edited the quiz settings with id {$this->objectid}.";
     }
 
+    #[\Override]
     public function get_url() {
-        return new \moodle_url('/mod/quiz/report/editquizsettings/editquizsettings.php', array('id' => $this->context->instanceid));
+        return new \moodle_url('/mod/quiz/report/editquizsettings/editquizsettings.php',
+            ['id' => $this->context->instanceid]);
     }
+
+    /**
+     * Set the log information.
+     */
     public function set_loginfo($loginfo) {
         $this->loginfo = $loginfo;
     }

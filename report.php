@@ -42,7 +42,7 @@ class quiz_editquizsettings_report extends report_base {
     /**
      * @var array fields that can be edited using this report.
      */
-    private $editablefields = array('timeopen', 'timeclose');
+    private $editablefields = ['timeopen', 'timeclose'];
 
     /**
      * Displays the results for this report
@@ -59,13 +59,13 @@ class quiz_editquizsettings_report extends report_base {
         require_capability('quiz/editquizsettings:editquizsettingsreport', $modcontext);
         require_once($CFG->dirroot . '/mod/quiz/report/editquizsettings/editquizsettings_form.php');
 
-        $pageoptions = array();
+        $pageoptions = [];
         $pageoptions['id'] = $cm->id;
         $pageoptions['mode'] = 'editquizsettings';
         $reporturl = new moodle_url('/mod/quiz/report.php', $pageoptions);
 
         $mform = new quiz_report_editquizsettings_form($reporturl,
-                array('quizname' => $quiz->name, 'idnumber' => $cm->idnumber), 'get');
+            ['quizname' => $quiz->name, 'idnumber' => $cm->idnumber], 'get');
 
         $data = new stdClass();
         foreach ($this->editablefields as $field) {
@@ -74,7 +74,7 @@ class quiz_editquizsettings_report extends report_base {
         $mform->set_data($data);
 
         if ($mform->is_cancelled()) {
-            redirect(new moodle_url('/mod/quiz/view.php', array('id' => $cm->id)));
+            redirect(new moodle_url('/mod/quiz/view.php', ['id' => $cm->id]));
 
         } else if ($fromform = $mform->get_data()) {
             $loginfo = '';
@@ -100,7 +100,7 @@ class quiz_editquizsettings_report extends report_base {
 
                 // Log quiz settings edit event.
                 $event = \quiz_editquizsettings\event\quiz_settings_edited::create(
-                     array('objectid' => $quiz->id, 'context' => context_module::instance($cm->id)));
+                    ['objectid' => $quiz->id, 'context' => context_module::instance($cm->id)]);
                 $event->set_loginfo($info);
                 $event->trigger();
 
@@ -114,7 +114,7 @@ class quiz_editquizsettings_report extends report_base {
                 // mod_updated event for this change, because none of the code
                 // that catches that event seems to care about dates.
             }
-            redirect(new moodle_url('/mod/quiz/view.php', array('id' => $cm->id)));
+            redirect(new moodle_url('/mod/quiz/view.php', ['id' => $cm->id]));
         }
         $this->print_header_and_tabs($cm, $course, $quiz, 'editquizsettings');
         $mform->display();
