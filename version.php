@@ -24,11 +24,11 @@
 
 defined('MOODLE_INTERNAL') || die();
 
-$plugin->version   = 2022031400;
+$plugin->version   = 2025072300;
 $plugin->requires  = 2017111300;
 $plugin->cron      = 0;
 $plugin->component = 'quiz_editquizsettings';
 $plugin->maturity  = MATURITY_STABLE;
-$plugin->release   = 'v1.6 for Moodle 3.9+';
+$plugin->release   = 'v1.7 for Moodle 5.0+';
 
 $plugin->outestssufficient = true;

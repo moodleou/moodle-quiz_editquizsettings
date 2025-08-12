@@ -14,23 +14,10 @@ Feature: Edit quiz settings, in order to edit the settings (dates) we need to
       | user    | course | role           |
       | manager | C1     | manager        |
     When I log in as "admin"
-    And I am on "Course 1" course homepage
-    And I turn editing mode on
-    And I add a "Quiz" to section "1" and I fill the form with:
-      | Name                 | Quiz 1             |
-      | Description          | Quiz 1 description |
-      | id_timeopen_enabled  | 1                  |
-      | id_timeopen_day      | 20                 |
-      | id_timeopen_month    | March              |
-      | id_timeopen_year     | 2018               |
-      | id_timeopen_hour     | 14                 |
-      | id_timeopen_minute   | 30                 |
-      | id_timeclose_enabled | 1                  |
-      | id_timeclose_day     | 20                 |
-      | id_timeclose_month   | October            |
-      | id_timeclose_year    | 2018               |
-      | id_timeclose_hour    | 14                 |
-      | id_timeclose_minute  | 30                 |
+    And I am on "Course 1" course homepage with editing mode on
+    And the following "activities" exist:
+      | activity | name   | intro              | course | section | timeopen   | timeclose  |
+      | quiz     | Quiz 1 | Quiz 1 description | C1     | 1       | 1521556200 | 1540045800 |
     And I log out
 
   @javascript
